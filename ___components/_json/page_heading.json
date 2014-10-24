@@ -1,0 +1,19 @@
+{
+    "name": "Page Heading",
+    "about": "/page/heading",
+    "typeof": "Component",
+    "pageHeading": {
+        "storeDetails": {
+            "title" : "Store Details:",
+            "clazz" : "",
+            "secondaryHeading" : {
+                "title": "Dupont Circle",
+                "clazz": ""
+            }
+        },
+        "confirmation": {
+            "title" : "Account Information",
+            "clazz": ""
+        }
+    }
+}

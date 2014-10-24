@@ -1,0 +1,51 @@
+{
+    "name": "Store Hours",
+    "about": "/store/hours",
+    "typeof": "Component",
+	"storeHours": {
+		"labels": {
+			"text": {
+				"day": "",
+				"pickup": "Pick Up",
+				"delivery": "Delivery"
+			}
+		},
+		"schedule": [
+			{
+				"day": "Mon",
+				"pickup": "10:00am - 12:00am",
+				"delivery": "10:00am - 12:00am"
+			},
+			{
+				"day": "Tues",
+				"pickup": "10:00am - 12:00am",
+				"delivery": "10:00am - 12:00am"
+			},
+			{
+				"day": "Weds",
+				"pickup": "10:00am - 12:00am",
+				"delivery": "10:00am - 12:00am"
+			},
+			{
+				"day": "Thurs",
+				"pickup": "10:00am - 12:00am",
+				"delivery": "10:00am - 12:00am"
+			},
+			{
+				"day": "Fri",
+				"pickup": "10:00am - 12:00am",
+				"delivery": "10:00am - 12:00am"
+			},
+			{
+				"day": "Sat",
+				"pickup": "10:00am - 1:00am",
+				"delivery": "10:00am - 1:00am"
+			},
+			{
+				"day": "Sun",
+				"pickup": "10:00am - 1:00am",
+				"delivery": "10:00am - 1:00am"
+			}
+		]
+	}
+}

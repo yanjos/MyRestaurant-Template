@@ -1,0 +1,22 @@
+<script id="store_location_search_template" type="text/html">
+
+<section class="store-location-search" about="{{about}}" typeof="{{typeof}}">
+    {{#storeLocationSearch}}
+    <p class="store-location-search__title">{{{labels.text.title}}}</p>
+
+    <form class="store-location-search__form" action="#">
+        <input type="text" class="form-control cityLocation" placeholder="{{{labels.placeholder.city}}}">
+        <select class="form-control select-state-location">
+            <option value="default" selected>Select State</option>
+            {{#states.value}}
+                <option value="{{abbreviation}}">{{state}}</option>
+            {{/states.value}}
+        </select>
+        <span class="store-location-or-splitter">or</span>
+        <input type="text" class="form-control zipCodeLocation" placeholder="{{{labels.placeholder.zipCode}}}">                    
+        <button type="submit" class="btn btn-gold">{{{labels.button.submit}}}</button>
+    </form>
+    {{/storeLocationSearch}}
+</section>
+
+</script>

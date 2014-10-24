@@ -1,0 +1,128 @@
+//Generic Page Start
+.generic-page-wrapper {
+    .generic-page-inner {
+        background: @white;
+        width: 100%;
+        margin: 0 auto;
+        color: @black;
+        margin-top: 30px;
+
+        @media only screen and (max-width: 768px) {
+            width: 100%
+        }
+    }
+}
+//Generic Page End
+
+a {
+    color: @baseRed;
+}
+
+//Content Start
+.content-wrapper {
+    width: 100%;
+
+    .content-inner {
+        width: 90%;
+        margin: 0 auto;
+        padding: 25px 0;
+    }
+}
+//Conent End
+
+//Home Start
+.home-page-inner {
+    margin-top: 10px;
+}
+.store-location-area {
+    display: table;
+    width: 100%;
+
+    @media only screen and (max-width: 1000px) {
+        display: block;
+    }
+
+    .store-location-left {
+        display: table-cell;
+        vertical-align: top;
+        width: 50%;
+
+        @media only screen and (max-width: 1000px) {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .store-location-right {
+        display: table-cell;
+        vertical-align: bottom;
+        width: 50%;
+
+        @media only screen and (max-width: 679px) {
+            margin-bottom: 8px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}
+//Home End
+
+//Store Details Start
+.store-details-wrapper {
+    .store-details-inner {
+
+        .store-details-inner-container {
+            .store-details-content {
+                width: 100%;
+
+                section.store-details-content-top {
+                    background: @white;
+                    padding: 14px;
+                    overflow: hidden;
+
+                    > span {
+                        @media only screen and (max-width: 630px) {
+                            text-align: center;
+                            display: block;
+                            margin: 0 auto;
+                            float: none !important;
+                        }
+                    }
+                }
+
+                section.store-details-content-bottom {
+                    display: table;
+                    width: 100%;
+                    background: @white;
+                    padding: 14px;
+                    .border-radius(0 0 5px 5px);
+
+                    &-left, &-right {
+                        display: table-cell;
+                        width: 50%;
+                        vertical-align: top;
+
+                        @media only screen and (max-width: 679px) {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                }
+
+            }
+        }        
+
+    }
+}
+//Store Details End
+
+//Account Navigation Start
+section.account-page-top {
+    text-align: center;
+}
+//Account Navigation End

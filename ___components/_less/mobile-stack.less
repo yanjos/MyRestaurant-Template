@@ -1,0 +1,27 @@
+//Mobile Stack Navigation Start
+.mobile-stack-nav {
+    &__list {
+        padding: 0;
+        clear: both;
+
+        li {
+            width: 100%;
+            height: 40px;
+            background: @darkGreen;
+            font-size: 17px;
+            border-bottom: 1px solid @white;
+            line-height: 40px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        &.mobile-only {
+            display: none;
+
+            @media only screen and (max-width: 679px) {
+                display: block;
+            }
+        }
+    }
+}
+//Mobile Stack Navigation End

@@ -1,0 +1,13 @@
+{
+    "name": "Store Map",
+    "about": "/store/map",
+    "typeof": "Component",
+    "storeMap": {
+        "iframe": {
+            "src" : "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3104.536777304817!2d-77.036987!3d38.911707!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7c3d77bc157%3A0xffb2773bcbadbc7d!2s1616+16th+St+NW!5e0!3m2!1sen!2sus!4v1403901756226",
+            "width" : 400,
+            "height" : 280,
+			"frameborder": 0
+        }
+    }
+}

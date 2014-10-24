@@ -1,0 +1,23 @@
+{
+    "name": "Store Location Pickup Delivery Info",
+    "about": "/store/location/pickup/delivery/info",
+    "typeof": "Component",
+    "storeLocationInfo": {
+        "pickup": {
+            "labels": {
+                "text": {
+                    "title": "choose your pickup location."
+                }
+            },
+            "clazz": "store-location-pickup-delivery-info__pickup__text-large"
+        },
+        "delivery": {
+            "labels": {
+                "text": {
+                    "title": "delivery is not available at this time."
+                }
+            },
+            "clazz": ""
+        }
+    }
+}

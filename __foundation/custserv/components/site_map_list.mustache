@@ -1,0 +1,25 @@
+<li class="{{#hasChildren}}ui-sitemap-elem-grp{{/hasChildren}}{{^hasChildren}}ui-sitemap-elem{{/hasChildren}}">
+	<div>
+	{{#hasChildren}}
+	 	<span onclick="doToggleGroup(this);" class="ui-sitemap-elem-expand">&nbsp;</span>
+	{{/hasChildren}}
+	{{^hasChildren}}
+	 	<span class="ui-sitemap-elem-no-child">&nbsp;</span>
+	{{/hasChildren}}
+
+	{{#hasLink}}
+	<a href="{{path}}">
+	{{/hasLink}}
+	{{title}}
+	{{#hasLink}}
+	</a>
+	{{/hasLink}}
+	</div>
+	{{#hasChildren}}
+	<ul>
+		{{#children}}
+		{{>site_map_list}}
+		{{/children}}
+	</ul>
+	{{/hasChildren}}
+</li>

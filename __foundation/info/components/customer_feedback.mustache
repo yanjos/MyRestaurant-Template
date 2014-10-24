@@ -1,0 +1,70 @@
+<section class="content-wrapper full-width {{clazz}}" about="{{about}}" typeof="{{typeof}}">
+	<form class="customer-feedback__form" action="{{formAction}}" method="post" data-tag="wh-feedback-form">
+		<input type="hidden" name="format" value="{{form.format}}">
+		<input type="hidden" name="recipient" value="{{form.recipient}}">
+		<input type="hidden" name="siteid" value="{{form.siteid}}">
+		<input type="hidden" name="pageAction" value="validateParams">
+		<header>
+			<h1>{{{labels.general.customerfeedback}}}</h1>
+			<p>{{{labels.general.customerfeedbackinstructions}}}</p>
+		</header>
+		{{#messages.errorMessage}}
+		<div class="alert-box alert">
+			<p>{{.}}</p>
+		</div>
+		{{/messages.errorMessage}}
+		{{#messages.infoMessage}}
+		<div class="alert-box info">
+			<p>{{.}}</p>
+		</div>
+		{{/messages.infoMessage}}		
+		<div class="form-group">
+			<label for="firstName">
+				{{{labels.guestinfo.firstname}}}
+			</label>
+			<input type="text" name="firstName" value="{{form.firstName}}" id="firstName" required>
+			{{#messages.msgFirstName}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgFirstName}}			
+		</div>
+		<div class="form-group">
+			<label for="lastName">
+				{{{labels.guestinfo.lastname}}}
+			</label>
+			<input type="text" name="lastName" value="{{form.lastName}}" id="lastName" required>
+			{{#messages.msgLastName}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgLastName}}
+		</div>
+		<div class="form-group">
+			<label for="phoneNumber">
+				{{{labels.guestinfo.phonenumber}}}
+			</label>
+			<input type="text" name="phoneNumber" value="{{form.phoneNumber}}" id="phoneNumber">
+			{{#messages.msgPhone}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgPhone}}
+		</div>
+		<div class="form-group">
+			<label for="emailAddress">
+				{{{labels.guestinfo.emailaddress}}}
+			</label>
+			<input type="text" name="emailAddress" value="{{form.emailAddress}}" id="emailAddress" required pattern="email">
+			{{#messages.msgEmail}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgEmail}}
+		</div>
+		<div class="form-group">	
+			<label for="comments">
+				{{{labels.general.customerfeedbackcomment}}}
+			</label>
+			<textarea type="text" name="comments" id="comments" rows="10" cols="60" required></textarea>
+			{{#messages.msgComments}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgComments}}			
+		</div>
+		<div class="form-group call-to-action">
+			<button type="submit" class="button">{{{labels.general.submitbutton}}}</button>
+		</div>
+	</form>
+</section>

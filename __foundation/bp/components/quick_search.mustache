@@ -1,0 +1,273 @@
+<div class="widget booking-widget {{clazz}}" about="{{about}}" typeof="{{typeof}}">
+	<div class="panel">
+		<form id="SearchForm" name="SearchForm" action="{{formAction}}" method="post">
+			<input type="hidden" name="sortBy" value="{{form.sortBy}}">
+			<input type="hidden" name="membershipId" id="membershipId" value="{{form.membershipId}}">
+			<input type="hidden" name="memberType" id="membershipType" value="{{form.membershipType}}">
+			<input type="hidden" name="memberLevel" id="membershipLevel" value="{{form.membershipLevel}}">
+			<input type="hidden" name="ratePlanCode" value="{{param.ratePlanCode}}">
+			<input type="hidden" name="confNum" value="{{param.confNumber}}">
+			<input type="hidden" name="legNum" value="{{param.legNumber}}">			
+			<input type="hidden" name="packagesSelected" value="{{param.packagesSelected}}">
+			<input type="hidden" name="childAges" id="childAges" value="">
+			<input type="hidden" name="selectChildrenAges" styleId="selectChildrenAges" value="{{parameters.showChildrenAges}}">
+			<input type="hidden" name="displayCheckoutDate" styleId="displayCheckoutDate" value="{{parameters.showCheckoutDate}}">
+			<input type="hidden" name="displayCheckinoutDateOneField" styleId="displayCheckinoutDateOneField" value="{{parameters.showCheckoutDateInOneField}}">
+			<input type="hidden" name="displayNumNights" styleId="displayNumNights" value="{{parameters.showNumberOfNights}}">
+			<input type="hidden" name="itineraryBookingInd" styleId="itineraryBookingInd" value="{{param.itineraryBookingInd}}">
+			<input type="hidden" name="sourceCode" value="{{param.sourceCode}}">
+			<input type="hidden" name="marketCode" value="{{param.marketCode}}">    
+			{{#parameters.isModifyRoom}}
+			<input type="hidden" name="isModifyRoom" value="Y">
+			{{/parameters.isModifyRoom}}
+			{{#parameters.isHotelInForm}}
+			<input type="hidden" name="srchResort" id="srchResort" value="{{param.srchResort}}"/>
+			{{/parameters.isHotelInForm}}
+			{{#parameters.isModifyReservationForm}}
+			<input type="hidden" name="formType" id="modRes" value="modifyReservation">
+			{{/parameters.isModifyReservationForm}}
+			{{#parameters.tcpCMS}}
+			<input type="hidden" name="tcp" value="{{.}}">
+			{{/parameters.tcpCMS}}
+			{{^parameters.isRegionalSearch}}
+			<input type="hidden" name="country" id="country" value="{{form.country}}">
+			<input type="hidden" name="city" id="city" value="{{form.city}}">
+			{{/parameters.isRegionalSearch}}
+			
+      		<h3 class="booking-widget__title widget-title">
+      			{{#parameters.isModifyForm}}
+      			{{{labels.roomdetials.modifysearch}}}
+      			{{/parameters.isModifyForm}}
+      			{{#parameters.isModifyReservationForm}}
+      			{{{labels.modifyres.edityourreservation}}}
+      			{{/parameters.isModifyReservationForm}}
+      			{{#parameters.isSearchForm}}
+      			{{{labels.search.quicksearch}}}
+      			{{/parameters.isSearchForm}}      			
+      		</h3>
+			{{#messages.errorMessage}}
+			<div class="alert-box alert">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.errorMessage}}
+			{{#messages.infoMessage}}
+			<div class="alert-box info">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.infoMessage}}
+			{{#messages.operaErrorMessage}}
+			<div class="alert-box alert">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.operaErrorMessage}}
+			{{#messages.msgCheckinDate}}
+			<div class="alert-box alert">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.msgCheckinDate}}
+			{{#messages.msgCheckoutDate}}
+			<div class="alert-box alert">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.msgCheckoutDate}}
+			{{#messages.msgCheckinRequired}}
+			<div id="ui-checkin-date-mandatory-error" class="error" style="display: none;">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.msgCheckinRequired}}
+			{{#messages.msgCheckinInvalid}}
+			<div id="ui-checkin-date-invalid-error" class="error" style="display: none;">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.msgCheckinInvalid}}
+			{{#messages.msgCheckoutRequired}}
+			<div id="ui-checkout-date-mandatory-error" class="error" style="display: none;">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.msgCheckoutRequired}}
+			{{#messages.msgCheckoutInvalid}}
+			<div id="ui-checkout-date-invalid-error" class="error" style="display: none;">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.msgCheckoutInvalid}}
+			{{#messages.msgChildAges}}
+			<div id="childAgeError" class="error" style="display: none;">
+				<p>{{{.}}}</p>
+			</div>
+			{{/messages.msgChildAges}}
+			<fieldset>
+				{{#parameters.isRegionalSearch}}
+			 	{{#parameters.showCityCountryList}}
+				<div class="form-group country-list">
+					<label for="country">{{{labels.search.markcountryselect}}}</label>
+					<select name="country" id="countryInRoomSearchForm">
+						<option value="default_country">{{{labels.lov (countrycodes).defaultCountry}}}</option>
+						{{#countries}}							
+						<option value="{{value}}" {{#selected}}selected{{/selected}}>{{{description}}}</option>
+						{{/countries}}
+					</select>
+				</div>			 	
+				<div class="form-group city-list">
+					<label for="city">{{{labels.search.markcityselect}}}</label>
+					<select name="city" id="cityInRoomSearchForm">
+						<option value="default_city">{{{labels.lov (countrycodes).defaultCity}}}</option>
+						{{#cities}}							
+						<option value="{{value}}" {{#selected}}selected{{/selected}}>{{{description}}}</option>
+						{{/cities}}
+					</select>
+				</div>			 	
+				<div class="form-group hotel-list">
+					<label for="srchResort" data-hotel="{{param.srchResort}}">{{{labels.search.resortselect}}}</label>
+					<select name="srchResort" id="srchResort">
+						<option value="ALL">{{{labels.search.resortdefault}}}</option>
+						{{#hotels}}							
+						<option value="{{value}}" {{#selected}}selected{{/selected}}>{{{description}}}</option>
+						{{/hotels}}
+					</select>
+				</div>
+			 	{{/parameters.showCityCountryList}}
+			 	{{#parameters.showHotelList}}				
+				<div class="form-group hotel-list">
+					<label for="srchResort" data-hotel="{{param.srchResort}}">{{{labels.search.resortselect}}}</label>
+					<select name="srchResort" id="srchResort">
+						<option value="ALL">{{{labels.search.resortdefault}}}</option>
+						{{#hotels}}							
+						<option value="{{value}}" {{#selected}}selected{{/selected}}>{{{description}}}</option>
+						{{/hotels}}
+					</select>
+				</div>
+				{{/parameters.showHotelList}}
+			 	{{/parameters.isRegionalSearch}}
+			 	{{#parameters.isModifyButRegional}}
+			 	<div class="form-group hotel-list">
+					<label for="srchResort">{{{labels.search.selectedResort}}}</label>
+					<p>{{selectedHotelName}}</p>
+				</div>
+				{{/parameters.isModifyButRegional}}<!--inline-block
+			 --><div class="form-group datepickers-wrapper"><!--inline-block
+				 --><div class="form-group check-in">
+						<div class="datepicker-wrapper">
+							<label for="check-in">{{{labels.search.checkindate}}}</label>
+							<input type="text" name="checkinDateStr" class="datepicker-field" id="check-in" placeholder="{{dateFormatConfig}}" value="{{param.checkinDateStr}}">
+							<a href="#check-in" data-target="check-in" class="datepicker-button">Datepicker</a>
+							<div class="datepicker datepicker-check-in" data-target="check-in"></div>
+							<input type="hidden" name="checkinDay" id="checkinDay" class="checkinDay-select" value="">
+							<input type="hidden" name="checkinMonth" id="checkinMonth" class="checkinMonth-select" value="">
+							<input type="hidden" name="checkinYear" id="checkinYear" class="checkinYear-select" value="">
+						</div>
+					</div><!--inline-block
+					--><div class="form-group check-out">
+				 		<div class="datepicker-wrapper">
+							<label for="check-out">{{{labels.search.checkoutdate}}}</label>
+							<input type="text" name="checkoutDateStr" class="datepicker-field" id="check-out" placeholder="{{dateFormatConfig}}" value="{{param.checkoutDateStr}}">
+							<a href="#check-out" data-target="check-out" class="datepicker-button">Datepicker</a>
+							<div class="datepicker datepicker-check-out" data-target="check-out"></div>
+							<input type="hidden" name="checkoutDay" id="checkoutDay" class="checkoutDay-select" value="">
+							<input type="hidden" name="checkoutMonth" id="checkoutMonth" class="checkoutMonth-select" value="">
+							<input type="hidden" name="checkoutYear" id="checkoutYear" class="checkoutYear-select" value="">							
+						</div>
+					</div>
+				</div><!--inline-block
+			 --><div class="form-group room-parameters">
+					<div class="form-group numerical num-of-rooms">
+				   		<label for="numberOfRooms">{{{labels.search.numofrooms}}}</label>
+						<select name="numberOfRooms" id="numberOfRooms">
+							{{#numRooms}}
+							<option value="{{.}}">{{.}}</option>
+							{{/numRooms}}
+						</select>
+				  	</div><!--inline-block
+				 --><div class="form-group numerical num-of-adults">
+				   		<label for="numberOfAdults">{{{labels.search.adults}}}</label>
+						<select name="numberOfAdults" id="numberOfAdults">
+							{{#numAdults}}
+							<option value="{{.}}">{{.}}</option>
+							{{/numAdults}}
+						</select>
+				  	</div><!--inline-block
+				 --><div class="form-group numerical num-of-children">
+				   		<label for="numberOfChildren">{{{labels.search.children}}}</label>
+						<select name="numberOfChildren" id="numberOfChildren">
+							<option value="0">0</option>
+							{{#numChildren}}
+							<option value="{{.}}">{{.}}</option>
+							{{/numChildren}}
+						</select>
+					</div>
+					{{#parameters.showChildrenAges}}
+					<div class="child-ages-overlay" data-children="0">
+						<p>{{{labels.search.childrenages}}}</p>
+						<div class="form-group child-ages">
+							{{#numChildren}}
+							<div class="form-group numerical child-age">
+								<label for="child-age-{{.}}">{{{labels.search.childage}}} {{.}}</label>
+								<select id="childAge{{.}}" name="childAge{{.}}">
+									{{#numChildAge}}
+									<option value="{{.}}">{{.}}</option>
+									{{/numChildAge}}
+								</select>
+							</div><!--inline-block
+						/-->{{/numChildren}}
+						</div>
+						<button class="button" type="button">{{{labels.general.submitbutton}}}</button>
+					</div>
+					{{/parameters.showChildrenAges}}
+				</div>
+				<div class="form-group more-search-options">
+					<a href="#" class="toggle button">More search options</a>
+					<div class="search-options js-toggle-details">
+						<div class="form-group promo-codes">
+							{{#parameters.showPromoCode}}
+							<div class="form-group">
+								<label for="promo-code">{{{labels.search.promocode}}}</label>
+								<input type="text" name="promoCode" id="promoCode" placeholder="{{labels.search.promocode}}"/>
+							</div>
+							{{/parameters.showPromoCode}}
+							{{#parameters.showGroupCode}}
+							<div class="form-group">
+								<label for="group-code">{{{labels.search.groupcode}}}</label>
+								<input type="text" name="groupCode" id="groupCode" placeholder="{{labels.search.groupcode}}" />
+							</div>
+							{{/parameters.showGroupCode}}
+							{{#parameters.showCompanyCode}}
+							<div class="form-group">
+								<label for="company-id">{{{labels.search.corpid}}}</label>
+								<input type="text" name="corporateId" id="corporateId" placeholder="{{labels.search.corpid}}"/>
+							</div>
+							{{/parameters.showCompanyCode}}
+							{{#parameters.showIATACode}}
+							<div class="form-group">
+								<label for="iatanum">{{{labels.search.iatanum}}}</label>
+								<input type="text" name="IATANo" id="IATANo" placeholder="{{labels.search.iatanum}}"/>
+							</div>
+							{{/parameters.showIATACode}}				  	
+						</div>
+						<div class="form-group rate-plan">
+							{{#parameters.showRatePlanCode}}
+							<label for="rateplan">{{{labels.search.rateplan}}}</label>
+							<select id="rateCodeInRoomSearchForm" name="rateCodeInRoomSearchForm">
+								{{#ratePlans}}
+								<option value="{{value}}">{{{description}}}</option>
+								{{/ratePlans}}
+							</select>
+							{{/parameters.showRatePlanCode}}
+						</div>
+						<div class="form-group room-type">
+							{{#parameters.showRoomTypeCode}}
+							<label for="roomtype">{{{labels.search.roomplan}}}</label>
+							<select id="srchRoomType" name="srchRoomType">
+								{{#roomTypes}}
+								<option value="{{value}}">{{{description}}}</option>
+								{{/roomTypes}}
+							</select>
+							{{/parameters.showRoomTypeCode}}
+						</div>
+					</div>
+				</div>
+				<div class="formgroup call-to-action">
+					<button id="ac-submit" href="#" class="button" data-tag="wh-check-availability-click">{{{labels.search.checkavailability}}}</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>

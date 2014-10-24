@@ -1,0 +1,16 @@
+{
+    "name": "Store Services Quick Order",
+    "about": "/store/services/quick/order",
+    "typeof": "Component",
+    "storeServicesQuickOrder": {
+        "labels": {
+            "text": {
+                "title": "Order for:"
+            },
+            "button": {
+                "delivery": "Delivery",
+				"carryout": "Carryout"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<div id="{{#parameters.showByRooms}}room{{/parameters.showByRooms}}{{#parameters.showByRates}}rate{{/parameters.showByRates}}-slider{{id}}" class="slider flexslider">
+  <ul class="slides">
+  	{{#images}}
+    <li>
+      {{{imageHtml}}}      
+    </li>
+    {{/images}}
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
+</div>
+{{#hasMoreImages}}
+<div id="{{#parameters.showByRooms}}room{{/parameters.showByRooms}}{{#parameters.showByRates}}rate{{/parameters.showByRates}}-carousel{{id}}" class="carousel flexslider thumbs">
+  <ul class="slides">
+  	{{#images}}
+    <li>
+      {{{imageHtml}}}
+    </li>
+    {{/images}}
+  </ul>
+</div>
+{{/hasMoreImages}}

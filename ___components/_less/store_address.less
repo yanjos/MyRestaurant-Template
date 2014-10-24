@@ -1,0 +1,30 @@
+.store-address {
+    margin: 30px 0;
+
+    &__label {
+        float: left;
+        color: gray;
+        width: 20%;
+
+        @media only screen and (max-width: 425px) {
+            display: none;
+        }
+    }
+    &__location {
+        font-weight: bold;
+        margin-left: 21%;
+
+        @media only screen and (max-width: 425px) {
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    &__links {
+        font-size: 12px;
+        .arialFont();
+
+        @media only screen and (max-width: 425px) {
+            white-space: nowrap;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<div class="{{clazz}}" about="{{about}}" typeof="{{typeof}}">
+	<ul class="inline-list right">
+		{{#footer.navigation}}
+		<li id="{{key}}"><a id="{{value.id}}" href="{{value.path}}" data-tag="{{value.dataTag}}" {{#value.target}}target="{{.}}"{{/value.target}}>{{{value.title}}}</a></li>
+		{{/footer.navigation}}
+	</ul>
+</div>

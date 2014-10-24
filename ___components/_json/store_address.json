@@ -1,0 +1,29 @@
+{
+    "name": "Store Address",
+    "about": "/store/address",
+    "typeof": "Component",
+    "storeAddress": {
+        "labels": {
+            "text": {
+                "title": "Address"
+            }
+        },
+		"location": {
+			"address": {
+				"line_1": "1616 16th st NW",
+				"line_2": "Washington, DC, 20009",
+				"phone": "(202) 555-1212"
+			},
+            "links": {
+                "directions": {
+                    "path": "#",
+                    "title": "Get directions to our store"
+                },
+                "nearbyLocations": {
+                    "path": "#",
+                    "title": "See nearby locations"
+                }
+            }
+		}
+    }
+}

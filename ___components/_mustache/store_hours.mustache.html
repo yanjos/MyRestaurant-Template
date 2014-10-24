@@ -1,0 +1,22 @@
+<script id="store_hours_template" type="text/html">
+
+    <section class="store-hours" about="{{about}}" typeof="{{typeof}}">
+        <ul class="store-hours__list">
+            {{#storeHours}}
+            <li>
+                <span class="store-hours__list-label-day">{{{labels.text.day}}}</span>
+                <span class="store-hours__list-label-pickup">{{{labels.text.pickup}}}</span>
+                <span class="store-hours__list-label-delivery">{{{labels.text.delivery}}}</span>
+            </li>
+            {{/storeHours}}
+            {{#storeHours.schedule}}
+            <li>
+                <span class="store-hours__list-day">{{{day}}}</span>
+                <span class="store-hours__list-pickup">{{{pickup}}}</span>
+                <span class="store-hours__list-delivery">{{{delivery}}}</span>
+            </li>
+            {{/storeHours.schedule}}
+        </ul>
+    </section>
+
+</script>

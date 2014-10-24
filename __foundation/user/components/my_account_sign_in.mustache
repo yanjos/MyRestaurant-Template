@@ -1,0 +1,58 @@
+<div class="{{class}}" about="{{about}}" typeof="{{typeof}}">
+	<div class="form-container two-equal-cols content-wrapper">
+		<section class="primary-content">
+			<form action="{{formAction}}" name="loginForm" method="post" data-tag="wh-user-login">
+				<input type="hidden" name="dest" />
+	   			<input type="hidden" name="loginAction" value="TRUE" />			
+				<h3>{{{labels.myaccountsignin.alreadymember}}}</h3>
+				{{#messages.errorMessage}}
+				<div class="alert-box alert">
+					<p>{{.}}</p>
+				</div>
+				{{/messages.errorMessage}}
+				{{#messages.infoMessage}}
+				<div class="alert-box info">
+					<p>{{.}}</p>
+				</div>
+				{{/messages.infoMessage}}				
+				<p>{{{labels.guestinfo.reqitems}}} {{{labels.guestinfo.reqitemsbold}}}</p>	
+				<div class="form-group">
+					<label for="username">{{{labels.guestinfo.username}}}</label>
+					<input type="text" size="15" maxlength="40" id="reg-username" name="userName" placeholder="{{labels.notifyerror.signinusernamemissing}}" required />
+					<a href="/user/forgotusername.jsp" class="form-container__forgotten-link" data-tag="{{links.forgotUsername.dataTag}}">{{{links.forgotUsername.title}}}</a>
+				</div>
+				<div class="form-group">
+					<label for="password">{{{labels.guestinfo.password}}}</label>
+					<input type="password" size="15" maxlength="20" id="reg-password" name="password" placeholder="{{labels.notifyerror.signinpasswordmissing}}" required pattern="^(?=.*).{6,}$" />
+					<a href="/user/forgotpassword.jsp" class="form-container__forgotten-link" data-tag="{{links.forgotPassword.dataTag}}">{{{links.forgotPassword.title}}}</a>
+				</div>
+				<p>{{{labels.guestinfo.pwordtip}}}</p>
+				<div><input type="checkbox" name="keepLoggedIn" value="Remember Me" id="remember-me">
+				<label for="keepLoggedIn">{{{labels.infopopup.remembermetitle}}}</label><a href="#" class="form-container__remember-me" data-tag="wh-remember-me" data-dropdown="rmModal">{{{labels.myaccountsignin.whatisthis}}}</a></div>
+				<div class="call-to-action">
+					<button class="button" type="submit" data-tag="wh-sign-in-click">
+						{{{labels.general.signin}}}
+					</button>
+				</div>
+			</form>	
+		</section>
+		<section class="secondary-content">
+			<form>
+				<h3>{{{labels.myaccountsignin.notregisteredmembermessage}}}</h3>
+				<p>{{{labels.myaccountsignin.createaccountmessage}}}</p>
+				<div class="call-to-action">
+					<a href="{{links.createAccount.path}}" class="button" data-tag="{{links.createAccount.dataTag}}">{{{links.createAccount.title}}}</a>
+				</div>
+			</form>
+		</section>
+	</div>
+	<section>
+		<h3>{{{labels.myaccountsignin.havingtroublemessage}}}</h3>
+		<p>{{{labels.myaccountsignin.loginproblems}}} <a href="{{links.contactUs.path}}" data-tag="{{links.contactUs.dataTag}}">{{{links.contactUs.title}}}</a></p>
+	</section>
+	<div id="rmModal" class="f-dropdown medium content my-account-sign-in__rememberme-modal" data-dropdown-content>
+		<h3>{{{labels.infopopup.remembermetitle}}}</h3>		
+		<p>{{{labels.infopopup.remembermetext1}}}</p>
+		<p>{{{labels.infopopup.remembermetext2}}}</p>
+	</div>	
+</div>

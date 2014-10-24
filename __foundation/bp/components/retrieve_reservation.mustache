@@ -1,0 +1,47 @@
+<article class="main-content__article {{clazz}}" about="{{about}}" typeof="{{typeof}}">
+	<form name="retrieveReservationForm" action="{{formAction}}" method="post" data-tag="wh-retrieve-reservation">
+		<input type="hidden" name="pageAction" value="validateParams">
+		{{#messages.errorMessage}}
+		<div data-alert class="alert-box alert">
+			<p>{{.}}</p>
+			<a href="#" class="close">&times;</a>
+		</div>
+		{{/messages.errorMessage}}
+		{{#messages.infoMessage}}
+		<div data-alert class="alert-box info">
+			<p>{{.}}</p>
+			<a href="#" class="close">&times;</a>
+		</div>
+		{{/messages.infoMessage}}		
+		<div class="form-group">
+			<label for="reg-first_name">
+				{{{labels.guestinfo.firstname}}}				
+			</label>
+			<input type="text" name="firstName" value="" id="reg-first_name" required>
+			{{#messages.msgFirstName}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgFirstName}}			
+		</div>
+		<div class="form-group">
+			<label for="reg-last_name">
+				{{{labels.guestinfo.lastname}}}
+			</label>
+			<input type="text" name="lastName" value="" id="reg-last_name" required>
+			{{#messages.msgLastName}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgLastName}}		
+		</div>
+		<div class="form-group">
+			<label for="confirmationNumber">
+				{{{labels.retrieveres.confirmationnumber}}}
+			</label>
+			<input type="text" name="confirmationNumber" value="" id="confirmationNumber" required>
+			{{#messages.msgConfNumber}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgConfNumber}}	
+		</div>		
+		<div class="call-to-action">
+			<button type="submit" class="button">{{{labels.viewres.submitbutton}}}</button>
+		</div>
+	</form>
+</article>

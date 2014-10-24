@@ -1,0 +1,295 @@
+<div class="{{class}}" about="{{about}}" typeof="{{typeof}}">
+	<form class="create-account__form" name="registerLoginForm" action="{{formAction}}" method="post" data-tag="wh-register-user">
+		<input type="hidden" name="srchResort" value="{{hotelCode}}" />
+		{{#messages.errorMessage}}
+		<div class="alert-box alert">
+			<p>{{.}}</p>
+		</div>
+		{{/messages.errorMessage}}
+		{{#messages.infoMessage}}
+		<div class="alert-box info">
+			<p>{{.}}</p>
+		</div>
+		{{/messages.infoMessage}}		
+		<section class="create-account__login-details">
+			<div class="form-group">
+				<label for="reg-username">{{{labels.guestinfo.username}}}</label>
+				<input type="text" name="username" value="" id="reg-username" placeholder="{{labels.guestinfo.username}}" required>
+				{{#messages.msgUsername}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgUsername}}
+			</div>
+			<div class="form-group">
+				<label for="reg-password">{{{labels.guestinfo.password}}}</label>
+				<input type="password" name="password" value="" id="reg-password" placeholder="{{labels.guestinfo.password}}" required pattern="^(?=.*).{6,}$">
+				{{#messages.msgPassword}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgPassword}}
+			</div>
+			<div class="form-group">
+				<label for="reg-verifyPassword" class="required">{{{labels.myaccount.confirmpassword}}}</label>
+				<input type="password" name="verifyPassword" value="" id="reg-verifyPassword" placeholder="{{labels.guestinfo.password}}" data-equal-to="reg-password" required pattern="^(?=.*).{6,}$">
+				{{#messages.msgVerifyPassword}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgVerifyPassword}}
+			</div>
+		</section>
+
+		<section class="create-account__personal-details">
+			{{#parameters.showTitle}}
+			<div class="form-group create-account__personal-details__title">
+				<label for="reg-title"> 
+					{{{labels.guestinfo.usertitle}}}
+				</label>
+				<select name="title" id="reg-title" {{#parameters.requireTitle}}required{{/parameters.requireTitle}}>
+					<option value="">{{{labels.guestinfo.blankusertitle}}}</option>
+				{{#titles}}
+					<option value="{{value}}">{{description}}</option>
+				{{/titles}}
+				</select>
+				{{#messages.msgTitle}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgTitle}}
+			</div>
+			{{/parameters.showTitle}}
+			{{#parameters.showFirstName}}
+			<div class="form-group create-account__personal-details__firstname">
+				<label for="reg-first_name">
+					{{{labels.guestinfo.firstname}}}
+				</label>
+				<input type="text" name="firstName" value="" id="reg-first_name" {{#parameters.requireFirstName}}required{{/parameters.requireFirstName}}>
+				{{#messages.msgFirstName}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgFirstName}}				
+			</div>
+			{{/parameters.showFirstName}}
+			{{#parameters.showMiddleName}}
+			<div class="form-group create-account__personal-details__middlename">
+				<label for="reg-middle_initial"> 
+					{{{labels.guestinfo.middlename}}}
+				</label>
+				<input type="text" name="middleName" value="" id="reg-middle_initial" {{#parameters.requireMiddleName}}required{{/parameters.requireMiddleName}}>
+				{{#messages.msgMiddleName}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgMiddleName}}
+			</div>
+			{{/parameters.showMiddleName}}
+			<div class="form-group create-account__personal-details__lastname">
+				<label for="reg-last_name">
+					{{{labels.guestinfo.lastname}}}
+				</label>
+				<input type="text" name="lastName" value="" id="reg-last_name" required>
+				{{#messages.msgLastName}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgLastName}}
+			</div>
+		</section>
+
+		<section class="create-account__address">
+			{{#parameters.showAddressType}}
+			<div class="form-group create-account__address__addresstype">
+				<label for="reg-address_type"> 
+					{{{labels.guestinfo.addresstype}}}
+				</label>
+				<select name="addressType" id="reg-address_type" {{#parameters.requireAddressType}}required{{/parameters.requireAddressType}}>
+					<option value="">
+						{{{labels.listselect.blankaddresstype}}}
+					</option>
+					{{#addressTypes}}
+					<option value="{{value}}" {{#selected}}selected{{/selected}}>
+						{{description}}
+					</option>
+					{{/addressTypes}}
+				</select>
+				{{#messages.msgAddressType}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgAddressType}}				
+			</div>
+			{{/parameters.showAddressType}}
+			{{#parameters.showAddress}}
+			<div class="form-group create-account__address__addressline1">
+				<label for="reg-address1"> 
+					{{{labels.guestinfo.address1}}}
+				</label>
+				<input type="text" name="address1" value="" id="reg-address1" {{#parameters.requireAddress}}required{{/parameters.requireAddress}}>
+				{{#messages.msgAddress}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgAddress}}
+			</div>
+			{{/parameters.showAddress}}
+			{{#parameters.showAddress2}}
+			<div class="form-group create-account__address__addressline2">
+				<label for="reg-address2">
+					{{{labels.guestinfo.address2}}}
+				</label>
+				<input type="text" name="address2" value="" id="reg-address2" {{#parameters.requireAddress2}}required{{/parameters.requireAddress2}}>
+			</div>
+			{{/parameters.showAddress2}}
+			{{#parameters.showCity}}
+			<div class="form-group create-account__address__city">
+				<label for="reg-city">
+					{{{labels.guestinfo.city}}}
+				</label>
+				<input class="create-account__address__city-field" type="text" name="city" value="" id="reg-city" {{#parameters.requireCity}}required{{/parameters.requireCity}}>
+				{{#messages.msgCity}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgCity}}
+			</div>
+			{{/parameters.showCity}}
+			{{#parameters.showCountry}}
+			<div class="form-group create-account__address__country">
+				<label for="reg-country">
+					{{{labels.guestinfo.country}}}
+				</label>
+				<select class="create-account__address__country-list" name="countryCode" {{#parameters.requireCountry}}required{{/parameters.requireCountry}}>
+					<option value="">
+						{{{labels.guestinfo.blankcountry}}}
+					</option>
+					{{#parameters.showDefaultCountries}}
+					{{#defaultCountries}}
+					<option value="{{value}}" {{#selected}}selected{{/selected}} data-state-req="{{stateReq}}" data-postal-req="{{postalCodeReq}}">
+						{{{description}}} - {{value}}
+					</option>
+					{{/defaultCountries}}
+					{{#parameters.showDefaultCountryLine}}
+					<option value="" disabled="disabled">----------------------</option>
+					{{/parameters.showDefaultCountryLine}}					
+					{{/parameters.showDefaultCountries}}
+					{{#countries}}					
+					<option value="{{value}}" data-state-req="{{stateReq}}" data-postal-req="{{postalCodeReq}}">
+						{{description}} - {{value}}
+					</option>					
+					{{/countries}}
+				</select>					
+				{{#messages.msgCountry}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgCountry}}				
+			</div>
+			{{/parameters.showCountry}}
+			{{#parameters.showState}}
+			<div class="form-group create-account__address__state">
+				<label for="reg-state" id="reg_state">
+					{{{labels.guestinfo.stateregion}}}
+				</label>
+				<select class="create-account__address__state-list" name="state" {{#parameters.requireState}}required{{/parameters.requireState}}>
+					<option value="">{{{labels.guestinfo.listselectblankstate}}}</option>
+				</select>
+				{{#messages.msgState}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgState}}
+			</div>
+			{{/parameters.showState}}
+			{{#parameters.showPostal}}
+			<div class="form-group create-account__address__postalcode">
+				<label for="reg-postal_code" id="reg_postal">
+					{{{labels.guestinfo.postalcode}}}
+				</label>
+				<input class="create-account__address__postalcode-field" type="text" name="zipCode" value="" id="reg-postal_code" />
+				{{#messages.msgPostal}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgPostal}}
+			</div>
+			{{/parameters.showPostal}}
+		</section>
+
+		<section class="create-account__phone">
+			{{#parameters.showPhoneType}}
+			<div class="form-group">				
+				{{#parameters.hasPhoneType}}
+					<label for="reg-phone_type"> 
+						{{{labels.guestinfo.phonetype}}}
+					</label>								
+					<select name="phoneType" id="reg-phone_type" {{#parameters.requirePhoneType}}required{{/parameters.requirePhoneType}}>
+						<option value="">
+							{{{labels.guestinfo.blankphonetype}}}
+						</option>
+						{{#phoneTypes}}
+						<option value="{{value}}" {{#selected}}selected{{/selected}}>
+							{{{description}}}
+						</option>
+						{{/phoneTypes}}
+					</select>
+				{{/parameters.hasPhoneType}}
+				{{^parameters.hasPhoneType}}
+					<input type="hidden" id="phoneType" name="phoneType" value="{{parameters.defaultPhoneType}}">
+				{{/parameters.hasPhoneType}}
+				{{#messages.msgPhoneType}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgPhoneType}}
+			</div>
+			{{/parameters.showPhoneType}}
+			{{#parameters.showPhone}}
+			<div class="form-group">
+				<label for="reg-phone">
+					{{{labels.guestinfo.phonenumber}}}
+				</label>
+				<input type="text" name="phone" value="" id="reg-phone" {{#parameters.requirePhone}}required{{/parameters.requirePhone}}>
+				{{#messages.msgPhone}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgPhone}}
+			</div>
+			{{/parameters.showPhone}}
+		</section>
+		
+		<section class="create-account__email">
+			{{#parameters.showEmailType}}
+			<div class="form-group">
+				{{#parameters.hasEmailType}}
+					<label for="reg-email_type"> 
+						{{{labels.guestinfo.emailtype}}}
+					</label>
+					<select name="emailType" id="reg-email_type" {{#parameters.requireEmailType}}required{{/parameters.requireEmailType}}>
+						<option value="">
+							{{{labels.guestinfo.blankemailtype}}}
+						</option>
+						{{#emailTypes}}
+						<option value="{{value}}" {{#selected}}selected{{/selected}}>
+							{{{description}}}
+						</option>
+						{{/emailTypes}}
+					</select>
+				{{/parameters.hasEmailType}}
+				{{^parameters.hasEmailType}}
+					<input type="hidden" id="emailType" name="emailType" value="{{parameters.defaultEmailType}}">
+				{{/parameters.hasEmailType}}
+				{{#messages.msgEmailType}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgEmailType}}
+			</div>
+			{{/parameters.showEmailType}}
+			{{#parameters.showEmail}}
+			<div class="form-group">
+				<label for="reg-email">
+					{{{labels.guestinfo.emailaddress}}}
+				</label>
+				<input type="text" name="emailAddress" value="" id="reg-email" required pattern="email">
+				{{#messages.msgEmail}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgEmail}}
+			</div>			
+			<div class="form-group">
+				<label for="reg_email_confirm">
+					{{{labels.guestinfo.confirmemailaddress}}}
+				</label>
+				<input type="text" name="confirmEmailAddress" value="" id="reg-email_confirm" data-equal-to="reg-email" required pattern="email">
+				{{#messages.msgReEmail}}
+				<small class="error">{{.}}</small>
+				{{/messages.msgReEmail}}
+			</div>
+			{{/parameters.showEmail}}
+			{{#parameters.showMembershipEnrollment}}
+			<div class="form-group">
+				<label for="membershipAutoEnrollment">
+					<input type="checkbox" name="membershipAutoEnrollment" id="membershipAutoEnrollment" value="on" {{#parameters.defaultEnrollment}}checked{{/parameters.defaultEnrollment}}>
+					{{{labels.guestinfo.membershipautoenrollment}}}
+				</label>
+			</div>
+			{{/parameters.showMembershipEnrollment}}
+					
+		</section>
+		
+		<section class="form-group call-to-action">
+			<button type="submit" class="button create-account__button">{{{labels.confirmation.createanaccount}}}</button>
+		</section>
+	</form>
+</div>

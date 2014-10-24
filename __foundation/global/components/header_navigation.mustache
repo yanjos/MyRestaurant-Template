@@ -1,0 +1,16 @@
+<div class="{{clazz}}" about="{{about}}" typeof="{{typeof}}">
+  <nav class="top-bar" data-topbar>
+	<ul class="title-area">
+	  <li class="name">
+	  </li>
+	  <li class="toggle-topbar menu-icon"><a href="#">{{{labels.general.menu}}}</a></li>
+	</ul>
+	<section class="top-bar-section">
+	  <ul class="module unstyled">
+		{{#header.navigation}}
+		<li id="{{key}}"><a id="{{value.id}}" href="{{value.path}}" data-tag="{{value.dataTag}}" {{#value.target}}target="{{.}}"{{/value.target}}>{{{value.title}}}</a></li>
+		{{/header.navigation}}
+	  </ul>
+	</section>
+  </nav>
+</div>

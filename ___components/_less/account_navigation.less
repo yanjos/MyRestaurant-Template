@@ -1,0 +1,38 @@
+.account-navigation {
+    &__links-group {
+        display: inline-block;
+
+        @media only screen and (max-width: 400px) {
+            width: 98%;
+        }
+
+        @media only screen and (min-width: 401px) and (max-width: 679px) {
+            width: 48%;
+        }
+    }
+    
+    a {
+        background: @white;
+        color: @darkGreen;
+        margin: 0 2px;
+        
+        &.btn:focus, &.btn:active, &.btn:hover {
+            color: @darkGreen;
+        }
+
+        &.account-navigation__links-link__active {
+            color: @white;
+            background: @darkGreen;
+            .box-shadow(none);
+            
+            &.btn:focus, &.btn:active, &.btn:hover {
+                color: @white;
+            }
+        }
+
+        @media only screen and (max-width: 679px) {
+            width: 99%;
+            margin-bottom: 7px;
+        }
+    }
+}

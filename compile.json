@@ -1,0 +1,2 @@
+{ "less": [] }
+// for brackets less plugin to not output css for every less or work at all for sweetgreen, we're using koala for compilting the import

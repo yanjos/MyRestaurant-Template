@@ -1,0 +1,8 @@
+{
+    "name": "Store Description",
+    "about": "/store/description",
+    "typeof": "Component",
+    "storeDescription": {
+		"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex each"
+    }
+}

@@ -1,0 +1,42 @@
+<header class="main-content__article {{clazz}}" about="{{about}}" typeof="{{typeof}}">
+	{{#parameters.showRetrieveResHeader}}
+	<h1>{{{labels.retrieveres.pageheader}}}</h1>
+	<p>{{{labels.retrieveres.retrieveyourreservationinstructions}}}</p>
+	{{/parameters.showRetrieveResHeader}}
+	{{#parameters.showSearchRoomHeader}}
+	<ol class="booking-progress">
+		{{#steps}}
+		<li class="booking-progress__step {{state}}">
+			<a id="{{link.id}}" {{#link.path}}onclick="{{.}}"{{/link.path}} data-tag="{{link.dataTag}}"><span class="path-step-number">{{index}}</span> <span class="path-step-text">{{{link.title}}}</span></a>
+		</li>		
+		{{/steps}}	
+	</ol>
+	{{/parameters.showSearchRoomHeader}}
+	{{#parameters.showSearchRoomResultHeader}}
+	<ol class="booking-progress">
+		{{#steps}}
+		<li class="booking-progress__step {{state}}">
+			<a id="{{link.id}}" {{#link.path}}onclick="{{.}}"{{/link.path}} data-tag="{{link.dataTag}}"><span class="path-step-number">{{index}}</span> <span class="path-step-text">{{{link.title}}}</span></a>
+		</li>		
+		{{/steps}}	
+	</ol>
+	{{/parameters.showSearchRoomResultHeader}}
+	{{#parameters.showSearchRoomEmptyHeader}}
+	<ol class="booking-progress">
+		{{#steps}}
+		<li class="booking-progress__step {{state}}">
+			<a id="{{link.id}}" {{#link.path}}onclick="{{.}}"{{/link.path}} data-tag="{{link.dataTag}}"><span class="path-step-number">{{index}}</span> <span class="path-step-text">{{{link.title}}}</span></a>
+		</li>		
+		{{/steps}}	
+	</ol>
+	<p></p>
+	<div class="alert-box info" data-alert>
+	{{#isChainMode}}
+	{{{labels.notifyinfo.selectpropertynopropertiesavailable}}}
+	{{/isChainMode}}
+	{{^isChainMode}}
+		{{{labels.notifyinfo.selectroomnoroomsavailable}}}
+	{{/isChainMode}}
+	</div>
+	{{/parameters.showSearchRoomEmptyHeader}}
+</header>

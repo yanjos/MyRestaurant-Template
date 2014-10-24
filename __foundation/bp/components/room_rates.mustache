@@ -1,0 +1,81 @@
+<section class="rates-packages" data-code="{{code}}">
+	<h2 class="rates-packages__heading">{{{labels.searchresults.availableratespackages}}}</h2>
+	{{#rates}}
+	<h3 class="rates-packages__sub-heading">{{{name}}}</h3>
+	<div class="rates-packages__body" data-code="{{code}}">
+		<p>{{{description}}}</p>
+		<a href="#" class="toggle button rate-packages__view-details">Show more room info</a>
+		<div class="room-policy js-toggle-details panel">
+			<h4 class="room-policy__sub-heading">Cancellation Policy</h4>
+			<p>Your reservation must be cancelled by 12:00 PM on 29.03.2014 to avoid a penalty charge of 99.00.</p>
+			<h4 class="room-policy__sub-heading">Guarantee Policy</h4>
+			<p>6pm hold exists for this reservation; guarantee for a late arrival is optional.</p>
+			<h4 class="room-policy__sub-heading">Deposit Policy</h4>
+			<p>A deposit is not mandatory</p>
+			<h4 class="room-policy__sub-heading">Marketing Information</h4>
+			<p>Thank you for booking</p>
+			<h4 class="room-policy__sub-heading">Tax Information</h4>
+			<p>Tax included VAT 7%</p>
+		</div>
+		{{#hasPackages}}
+		<h4>{{{labels.searchresults.includeditems}}}</h4>
+		<ul class="unstyled data-list rates-packages__included-items">
+			{{#packages}}
+	    	<li><h4 class="data-list__heading">{{{name}}}</h4><div class="data-list__item">{{{description}}}</div></li>
+	    	{{/packages}}
+		</ul>
+		{{/hasPackages}}
+	</div>
+	<aside class="rates-packages__cost-summary">
+		<ul class="unstyled data-list pricing">
+			{{#showRedeemPoints}}
+			<li>
+				<h4 class="data-list__heading">{{{labels.searchresults.baseroompoints}}}</h4>
+				<div class="data-list__item"><span class="data-list__item__points">{{points}}</span></div>
+			</li>
+			<li>
+				<h4 class="data-list__heading">{{{labels.searchresults.totalpoints}}}</h4>
+				<div class="data-list__item"><span class="data-list__item__totalpoints">{{totalPoints}}</span></div>
+			</li>			
+			{{/showRedeemPoints}}
+			{{^showRedeemPoints}}
+			<li>
+				<h4 class="data-list__heading">{{{labels.searchresults.baseroomrate}}}</h4>
+				<div class="data-list__item">
+				{{#showPriceOff}}
+					<del>{{priceDiscount}}</del>
+					{{priceOff}}% {{{labels.searchresults.percentageoff}}}
+					{{#currencyCode}}<span class="currency-code">{{.}}</span>{{/currencyCode}}
+					{{#currencySymbol}}<span class="currency-symbol">{{.}}</span>{{/currencySymbol}}
+					<span class="price">{{price}}<span>				
+				{{/showPriceOff}}
+				{{^showPriceOff}}
+					{{#currencyCode}}<span class="currency-code">{{.}}</span>{{/currencyCode}}
+					{{#currencySymbol}}<span class="currency-symbol">{{.}}</span>{{/currencySymbol}}
+					<span class="price">{{price}}<span>
+				{{/showPriceOff}}
+				</div>
+			</li>
+			<li>
+				<h4 class="data-list__heading">{{{labels.searchresults.roomrate}}}</h4>
+				<div class="data-list__item">
+				{{#showPriceOff}}
+					<del>{{totalPriceDiscount}}</del>
+					{{totalPricePercentOff}}% {{{labels.searchresults.percentageoff}}}
+					{{#currencyCode}}<span class="currency-code">{{.}}</span>{{/currencyCode}}
+					{{#currencySymbol}}<span class="currency-symbol">{{.}}</span>{{/currencySymbol}}
+					<span class="price">{{totalPrice}}<span>
+				{{/showPriceOff}}
+				{{^showPriceOff}}
+					{{#currencyCode}}<span class="currency-code">{{.}}</span>{{/currencyCode}}
+					{{#currencySymbol}}<span class="currency-symbol">{{.}}</span>{{/currencySymbol}}
+					<span class="price">{{totalPrice}}<span>
+				{{/showPriceOff}}
+				</div>
+			</li>
+			{{/showRedeemPoints}}
+		</ul>
+	</aside>
+	<p class="call-to-action"><button class="button rates-packages__call-to-action" data-call="['{{roomTypeCode}}','{{awardType}}','{{code}}','{{packageCodes}}', '{{blockCode}}', '{{qualifyingIdType}}', '{{qualifyingId}}','{{showRedeemPoints}}','{{points}}','{{totalPoints}}']">{{{labels.searchresults.booknow}}}</button></p>
+	{{/rates}}
+</section>

@@ -1,0 +1,27 @@
+<div class="sitemap-links {{clazz}}" about="{{about}}" typeof="{{typeof}}">	
+	<h2><localization:label labelName="general.sitemap" defaultString="Site Map" editable="true"/></h1>
+	<section>
+		<ul class="ui-sitemap">
+			{{#sitemap}}
+			{{>site_map_list}}
+			{{/sitemap}}
+		</ul>
+	</section>
+	<script type="text/javascript">
+	//<!--
+	function doToggleGroup(ctrl) {
+		var $ctrl = $(ctrl);
+		var $div = $ctrl.closest("div");
+		if ($ctrl.hasClass("ui-sitemap-elem-expand")) {
+			$ctrl.addClass("ui-sitemap-elem-collapse");
+			$ctrl.removeClass("ui-sitemap-elem-expand");
+			$div.next("ul").hide();
+		} else {
+			$ctrl.addClass("ui-sitemap-elem-expand");
+			$ctrl.removeClass("ui-sitemap-elem-collapse");
+			$div.next("ul").show();
+		}
+	}
+	//-->
+	</script>	
+</div>

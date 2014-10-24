@@ -1,0 +1,31 @@
+<div class="language-selection {{clazz}}" about="{{about}}" typeof="{{typeof}}">
+{{#languages}}
+  {{#parameters.showLanguages}}
+  {{#parameters.showByIcon}}
+	<a href="javascript: void(0);" class="button language dropdown menu-link flag-link small" data-dropdown="language-dropdown">{{{languages.current.code}}}<img class="flag-img" src="{{languages.current.src}}" alt="{{{languages.current.alt}}}" width="30" height="18"></a>
+	<ul id="language-dropdown" class="f-dropdown" data-dropdown-content="">
+	  {{#languages}}				  
+	  <li class="language-option{{#selected}} active{{/selected}}">
+		<a class="flag-link" href="javascript: void(0);" title="{{description}}" onclick="changeLanguage(this, {{parameters.promptBeforeChangeLanguage}}, '{{labels.general.confirmMessagechangelanguage}}', {{value}});" data-tag="wh-change-language-click">
+			{{{code}}}
+			<img class="flag-img" src="{{src}}" alt="{{{alt}}}" width="30" height="18">
+		</a>
+	  </li>
+	  {{/languages}}
+	</ul>
+  {{/parameters.showByIcon}}
+  {{^parameters.showByIcon}}
+	<a href="javascript: void(0);" class="button language dropdown menu-link small" data-dropdown="language-dropdown">{{{languages.current.description}}}</a>
+	<ul id="language-dropdown" class="f-dropdown" data-dropdown-content="">
+	  {{#languages}}
+	  <li class="language-option{{#selected}} active{{/selected}}">
+		<a href="javascript: void(0);" onclick="changeLanguage(this, {{parameters.promptBeforeChangeLanguage}}, '{{labels.general.confirmMessagechangelanguage}}', {{value}});" data-tag="wh-change-language-click">
+		{{{description}}}
+		</a>
+	  </li>
+	  {{/languages}}
+	</ul>
+  {{/parameters.showByIcon}}
+  {{/parameters.showLanguages}}
+{{/languages}}
+</div>

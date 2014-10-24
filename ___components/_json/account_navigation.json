@@ -1,0 +1,29 @@
+{
+    "name": "Account Navigation",
+    "about": "/account/navigation",
+    "typeof": "Component",
+    "navigation": {
+        "value": [
+            {
+                "path": "account-1-acct-info.html",
+                "title": "My Account Information",
+                "clazz": "account-navigation__links-link-account-information account-navigation__links-link__active"
+            },
+            {
+                "path": "account-2-addresses-stores.html",
+                "title": "My Addresses &amp; Stores",
+                "clazz": "account-navigation__links-link-addresses-stores"
+            },
+            {
+                "path": "account-3-fav-orders.html",
+                "title": "My Favorite Orders",
+                "clazz": "account-navigation__links-link-favorite-stores"
+            },
+            {
+                "path": "account-4-past-orders.html",
+                "title": "My Order History",
+                "clazz": "account-navigation__links-link-past-orders"
+            }
+        ]
+    }
+}

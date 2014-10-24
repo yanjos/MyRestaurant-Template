@@ -1,0 +1,43 @@
+.store-location-search {
+    &__title {
+        font-size: 16px;
+    }
+
+    &__form {
+        .form-control {
+            display: inline-block;
+
+            @media only screen and (max-width: 500px) {
+                display: block;
+                margin: 0 auto;
+                margin-top: 4px;
+                width: 95% !important;
+            }
+
+            &.cityLocation {
+                width: 140px;
+            }
+            &.select-state-location {
+                width: auto;
+            }
+            &.zipCodeLocation {
+                width: 86px;
+            }
+        }
+
+        .store-location-or-splitter {
+            margin: 0 5px;
+        }
+
+        button.btn-gold {
+            vertical-align: top;
+
+            @media only screen and (max-width: 500px) {
+                display: block;
+                margin: 0 auto;
+                margin-top: 8px;
+            }
+        }
+
+    }
+}

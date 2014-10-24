@@ -1,0 +1,186 @@
+.header {
+    width: 100%;
+    max-width: @maxPageWidth;
+    margin-bottom: 20px;
+
+        &__mobile-only {
+            display: none;
+
+            @media only screen and (max-width: 679px) {
+                display: block;
+                width: 100%;
+                .box-shadow();
+
+                header.main {
+                    height: 55px;
+                    background: @white;
+
+                    > span {
+                        float: left;
+
+                        &.mobile-nav {
+                            margin-left: 2%;
+                            width: 18%;
+                            text-align: left;
+                            margin-top: 12px;
+                        }
+                        &.mobile-logo {
+                            width: 60%;
+                            text-align: center;
+                            margin-top: 9px;
+
+                            img.company_logo {
+                                height: 32px;
+                            }
+                        }
+                        &.mobile-basket {
+                            margin-right: 2%;
+                            width: 18%;
+                            text-align: right;
+                            margin-top: 12px;
+
+                            span.text {
+                                position: relative;
+                                left: -2px;
+                            }
+
+                            .cart-item-count {
+                                width: 16px;
+                                height: 16px;
+                                font-size: 11px;
+                                color: @white;
+                                line-height: 16px;
+                                text-align: center;
+                                background: @black;
+                                top: 5px;
+                                right: 0;
+                                position: absolute;
+                                .border-radius(20px);
+                            }
+                        }
+                        span.text {
+                            font-size: 9px;
+                            text-transform: uppercase;
+                            color: #510000;
+                            display: block;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        &__desktop-only {
+            @media only screen and (max-width: 679px) {
+                display: none;
+            }
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+            }
+
+            width: 100%;
+            margin: 0 auto;
+            .box-shadow();
+            border-radius: 0 0 5px 5px;
+            display: block;
+
+            header.main {
+                height: 70px;
+                background: @white;
+                padding: 0 18px;
+
+                .company_logo {
+                    margin-top: 16px;
+                    width: 250px;
+                }
+
+                .header-links {
+                    line-height: 70px;
+
+                    a {
+                        padding: 5px 8px;
+                        background: @white;
+                        margin-right: 5px;
+                        color: #575757; 
+
+                        &:hover {
+                            text-decoration: none;  
+                        }
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        &.welcome-user {
+                            background: transparent;
+                        }
+
+                        &.header-basket {
+                            background: transparent;
+                            padding: 0;
+                            position: relative;
+                            top: -2px;
+
+                            .cart-item-count {
+                                width: 16px;
+                                height: 16px;
+                                font-size: 11px;
+                                color: @white;
+                                line-height: 16px;
+                                text-align: center;
+                                background: @black;
+                                top: -5px;
+                                right: -16px;
+                                position: absolute;
+                                .border-radius(20px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            nav.main-nav {
+                background: @darkGreen;
+                border-radius: 0 0 5px 5px;
+                height: 38px;
+                position: relative;
+
+                .nav {
+                    float: left;
+
+                    > li {
+                        border-right: 1px solid @white;
+
+                        a {
+                            padding: 7px 20px;
+                            font-size: 17px;
+                            color: @white;
+
+                            &.deals {
+                                border-radius: 0 0 0 4px;
+                                .black-gradient();
+                            }
+                        }
+
+                        ul.dropdown-menu {
+                            background-color: @baseRedDark;
+                            margin: -1px 0px 0px -3px;
+
+                            a {
+                                color: @white;
+                                font-size: 15px;
+
+                                &:hover {
+                                    background: darken(@baseRedDark, 10%);
+                                }                            
+                            }                        
+
+                        }
+                    }
+                }
+
+            }
+
+        }
+    
+}

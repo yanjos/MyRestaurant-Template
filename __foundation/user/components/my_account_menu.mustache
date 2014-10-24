@@ -1,0 +1,6 @@
+<ul class="my-account__navigation {{clazz}}" about="{{about}}" typeof="{{typeof}}">
+	<h3>{{labels.myaccount.heading}}</h3>
+ 	{{#links}}
+ 		<li id="{{key}}"><a href="{{value.path}}" data-tag="{{value.dataTag}}" {{#value.target}}target="{{.}}"{{/value.target}}>{{{value.title}}}</a></li>
+ 	{{/links}}
+</ul>

@@ -1,0 +1,33 @@
+<div class="{{class}}" about="{{about}}" typeof="{{typeof}}">
+	<header>
+	   <h3>{{{labels.layerforgotusername.userforgotusernametitle}}}</h3>
+	</header>
+	<section>
+		<form data-tag="wh-forgot-username" action="/user/forgotusername.cmd" method="post">
+			<input type="hidden" name="page" value="true"/>
+		{{#parameters.showSuccess}}
+			<div class="panel">
+				<p class="note">{{{labels.myaccount.forgotusernameconfirmationone}}}</p>
+				<p class="note">{{{labels.myaccount.forgotusernameconfirmationtwo}}}</p>
+			</div>			
+		{{/parameters.showSuccess}}
+		{{^parameters.showSuccess}}
+			<p class="note">{{{labels.layerforgotusername.forgotusernamemessage}}}</p>
+			{{#showErrors}}
+			<p class="error">{{messages.errorMessage}}</p>
+			<small class="error">{{{labels.layerforgotusername.userentertextcorrectinformation}}}</small>
+			{{/showErrors}}
+			<!-- user name  -->
+			<div class="form-group">
+				<label for="userName">{{{labels.general.emailaddress}}}</label>
+				<input id="userName" name="userName" type="text" size="20" maxlength="40" placeholder="{{labels.layerforgotpassword.enteremailaddress}}" required pattern="email"/>				     
+			</div>
+			<div class="call-to-action">
+				<button id="forgot_forgotPassword_ajax" class="button" type="submit" data-tag="wh-forgot-password-click">
+					{{{labels.myaccountsignin.sendusername}}}
+				</button>
+			</div>
+		{{/parameters.showSuccess}}			
+		</form>
+	</section>
+</div>

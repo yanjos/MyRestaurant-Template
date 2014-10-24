@@ -1,0 +1,11 @@
+<script id="store_map_template" type="text/html">
+
+    <section class="store-map" about="{{about}}" typeof="{{typeof}}">
+        <div class="store-map__inner">
+            {{#storeMap}}
+            <iframe class="store-map__iframe" src="{{{iframe.src}}}" width="{{{iframe.width}}}" height="{{{iframe.height}}}" frameborder="{{{iframe.frameborder}}}"></iframe>
+            {{/storeMap}}
+        </div>
+    </section>
+
+</script>

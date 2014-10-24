@@ -1,0 +1,23 @@
+{
+    "name" : "Logo",
+    "clazz" : "logo",
+    "about" : "/logo",
+    "typeof" : "Component",
+    "link" : {
+        "path": "/"
+    },
+    "image": {
+        "desktop": {
+            "src" : "images/_sg/sweet_green_logo.png",
+            "width" : 250,
+            "height" : 38,
+            "alt" : "Sweet Green Logo"
+        },
+        "mobile": {
+            "src" : "images/_sg/sweet_green_logo_mobile.png",
+            "width" : 209,
+            "height" : 32,
+            "alt" : "Sweet Green Logo"
+        }
+    }
+}

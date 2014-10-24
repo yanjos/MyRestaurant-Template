@@ -1,0 +1,33 @@
+{
+    "name": "Navigation Primary",
+    "about": "/navigation/primary",
+    "typeof": "Component",
+    "navigation": {
+        "value": [
+            {
+                "path": "start-order.html",
+                "title": "Start Order",
+                "clazz": "deals",
+                "dataTag": "myres-start-order-click"
+            },
+            {
+                "path": "menu.html",
+                "title": "Menu",
+                "clazz": "menu",
+                "dataTag": "myres-menu-click"
+            },
+            {
+                "path": "store-details.html",
+                "title": "Locations",
+                "clazz": "locations",
+                "dataTag": "myres-store-details-click"
+            },
+            {
+                "path": "contact-us.html",
+                "title": "Contact Us",
+                "clazz": "contact",
+                "dataTag": "myres-contact-us-click"
+            }
+        ]
+    }
+}

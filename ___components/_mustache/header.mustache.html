@@ -1,0 +1,61 @@
+<script id="header_template" type="text/html">
+
+<header class="header" about="{{about}}" typeof="{{typeof}}" role="banner">
+   
+    <div class="header__mobile-only">
+        <header class="main">
+            <span class="mobile-nav" id="mobile-nav-trigger" href="#mobile-nav-main">
+                <img src="images/mobile/nav_icon.png" alt="Navigation">
+                <span class="text">{{labels.mobile.header.menu}}</span>
+            </span>
+            <div class="logo logo_size_small">
+                <a href="{{logo.link.path}}" data-tag="myres-homepage-click">
+                    <img src="{{logo.image.mobile.src}}" class="company_logo" alt="{{logo.image.mobile.alt}}" width="{{logo.image.mobile.width}}" height="{{logo.image.mobile.height}}">
+                </a>
+            </div>
+            <span class="mobile-basket" id="mobile-basket-trigger" href="#mobile-basket-main">
+                <img src="images/mobile/basket_icon.png" alt="Basket">
+                <span class="text">{{labels.mobile.header.cart}}</span>
+                <span class="cart-item-count">0</span>
+            </span>
+        </header>
+    </div>
+
+    <div class="header__desktop-only">
+        <header class="main">
+            <div class="logo logo_size_small" about="{{about}}" typeof="{{typeof}}">
+                <a href="{{logo.link.path}}" data-tag="myres-homepage-click">
+                    <img src="{{logo.image.desktop.src}}" class="company_logo pull-left" alt="{{logo.image.desktop.alt}}" width="{{logo.image.desktop.width}}" height="{{logo.image.desktop.height}}">
+                </a>
+            </div>
+            
+            <div class="header-links pull-right">
+                {{#SignedInUser}}
+                    <a href="#" class="welcome-user">Welcome, {{username}}</a>
+                    <a href="#" class="sign-out" data-tag="myres-sign-out-click">Sign Out</a>
+                {{/SignedInUser}}
+                {{^SignedInUser}}
+                    <a class="sign-in" href="login.html" data-tag="myres-sign-in-click">Sign In</a>
+                    <a class="create-account" href="create-account.html">Create Account</a>
+                {{/SignedInUser}}
+                
+                <a href="#" class="header-basket">
+                    <img class="header-basket-icon" src="images/mobile/basket_icon.png" alt="Basket">
+                    <span class="cart-item-count">0</span>
+                </a>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <ul class="nav nav-pills">
+                {{#navigation.value}}
+                    <li><a class="{{clazz}}" href="{{path}}" data-tag="{{dataTag}}">{{{title}}}</a></li>
+                {{/navigation.value}}
+            </ul>
+        </nav>
+
+    </div>
+    
+</header>
+
+</script>

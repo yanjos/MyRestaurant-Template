@@ -1,0 +1,13 @@
+{
+    "name": "Store Services",
+    "about": "/store/services",
+    "typeof": "Component",
+    "storeServices": {
+        "labels": {
+            "text": {
+                "title": "Services",
+                "services": "Pickup, Delivery"
+            }
+        }
+    }
+}

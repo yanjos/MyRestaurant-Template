@@ -1,0 +1,17 @@
+<script id="store_address_template" type="text/html">
+
+    <section class="store-address" about="{{about}}" typeof="{{typeof}}">
+        {{#storeAddress}}
+        <span class="store-address__label">{{{labels.text.title}}}</span>
+        <div class="store-address__location">
+            <div class="store-address__line">{{{location.address.line_1}}}</div>
+            <div class="store-address__line">{{{location.address.line_2}}}</div>
+            <div class="store-address__line store-address__line-phone">{{{location.address.phone}}}</div>
+            <div class="store-address__links">
+                <a href="{{{location.links.directions.path}}}" class="store-address__links-link get-store-directions">{{{location.links.directions.title}}}</a> | <a href="{{{location.links.nearbyLocations.path}}}" class="store-address__links-link see-nearby-locations">{{{location.links.nearbyLocations.title}}}</span></a>
+            </div>
+        </div>
+        {{/storeAddress}}
+    </section>
+
+</script>

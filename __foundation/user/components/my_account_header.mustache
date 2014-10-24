@@ -1,0 +1,20 @@
+<header class="{{clazz}}" about="{{about}}" typeof="Component">
+	{{#parameters.showLoginHeader}}
+	<h2>{{{labels.general.signin}}}</h2>
+	<p>{{{labels.myaccount.welcomesigninmessage}}}</p>
+	{{/parameters.showLoginHeader}}
+	{{#parameters.showCreateUserHeader}}
+	<h1>{{{labels.myaccountnew.createnewaccount}}}</h1>
+	<p>{{{labels.myaccountnew.createusernamepasswordmessage}}}</p>
+	{{/parameters.showCreateUserHeader}}
+	{{#messages.errorMessage}}
+	<div class="alert-box alert">
+		<p>{{.}}</p>
+	</div>
+	{{/messages.errorMessage}}
+	{{#messages.infoMessage}}
+	<div class="alert-box info">
+		<p>{{.}}</p>
+	</div>
+	{{/messages.infoMessage}}	
+</header>

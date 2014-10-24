@@ -1,0 +1,16 @@
+<script id="store_location_pickup_delivery_info_template" type="text/html">
+
+    <div class="store-location-pickup-delivery-info" about="{{about}}" typeof="{{typeof}}">
+        {{#storeLocationInfo.pickup}}
+        <div class="store-location-pickup-delivery-info__pickup {{clazz}}">
+            {{{labels.text.title}}}
+        </div>
+        {{/storeLocationInfo.pickup}}
+        {{#storeLocationInfo.delivery}}
+        <div class="store-location-pickup-delivery-info__delivery {{clazz}}">
+            {{{labels.text.title}}}
+        </div>
+        {{/storeLocationInfo.delivery}}
+    </div>
+
+</script>

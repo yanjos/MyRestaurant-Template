@@ -1,0 +1,14 @@
+<div class="social-media{{#parameters.inline}}--inline{{/parameters.inline}} {{clazz}}" about="{{about}}" typeof="{{typeof}}">
+	<h4 class="social-media{{#parameters.inline}}--inline{{/parameters.inline}}__header">{{title}}</h4>
+	<ul class="social-media{{#parameters.inline}}--inline{{/parameters.inline}}__buttons button-group" property="Component">
+		{{#links}}
+		<li class="twitter">
+		<a href="javascript:void(0)" class="s-icon" onclick="window.open('{{path}}'); return false;" data-tag="{{dataTag}}">
+		{{#images}}
+		{{{imageHtml}}}
+		{{/images}}
+		</a>
+		</li>
+		{{/links}}
+	</ul>
+</div>

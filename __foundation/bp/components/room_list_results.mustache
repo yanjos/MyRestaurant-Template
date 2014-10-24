@@ -1,0 +1,34 @@
+<div class="{{clazz}}" about="{{about}}" typeof="{{typeof}}"> 
+<!-- listresults -->
+	<dl class="accordion" data-accordion>		
+		{{#products}}
+		<dd class="accordion__panel detailed-item-result">
+		  <a href="#panel{{id}}">{{{name}}}</a></h2>
+		  <div id="panel{{id}}" class="content">
+			<section class="detailed-item-result__gallery">
+				{{#parameters.showByRatesWithImages}}
+			  	<a class="th quickview">
+				{{#images}}
+				  {{{imageHtml}}}      
+				{{/images}}
+				</a>
+			  	{{/parameters.showByRatesWithImages}}
+				{{#parameters.showByRoomsWithImages}}
+			  	{{>carousel_thumbnails}}
+			  	{{/parameters.showByRoomsWithImages}}			  	
+			</section>
+			{{>room_rate_details}}
+			<section class="detailed-item-result__options">
+			{{#parameters.showByRooms}}
+			 	{{>room_rates}}
+			{{/parameters.showByRooms}}			
+			{{#parameters.showByRates}}
+			 	{{>rate_rooms}}
+			{{/parameters.showByRates}}
+			</section>
+		  </div>
+		</dd>
+		{{/products}}
+	</dl>
+<!-- listresults -->	
+</div>

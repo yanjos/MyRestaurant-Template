@@ -1,0 +1,10 @@
+{
+    "name": "Footer",
+    "about": "/footer",
+    "typeof": "Component",
+    "copyright": {
+        "symbol":     "&copy;",
+        "year":       "2016",
+        "company":    "sweetgreen, inc."
+    }
+}

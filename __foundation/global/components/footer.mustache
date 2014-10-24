@@ -1,0 +1,17 @@
+<footer class="footer">
+  <div class="copyright">
+    <div class="copyright__body">
+      <div class="copyright__text">
+        <p>{{{copyright.label.general.copyright}}}&nbsp;{{copyright.year}}&nbsp;{{copyright.company}}</p>
+      </div>
+      <div class="copyright__links">
+        <ul class="inline-list right">
+			{{#footer.navigation}}
+			<li id="{{key}}"><a id="{{value.id}}" href="{{value.path}}" data-tag="{{value.dataTag}}" {{#value.target}}target="{{.}}"{{/value.target}}>{{{value.title}}}</a></li>
+			{{/footer.navigation}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+

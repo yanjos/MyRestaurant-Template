@@ -1,0 +1,96 @@
+<section class="{{clazz}}" about="{{about}}" typeof="{{typeof}}">
+	<form class="customer-survey__form" action="{{formAction}}" method="post" data-tag="wh-survey-form">
+		<input type="hidden" name="recipient" value="{{form.recipient}}">
+		<input type="hidden" name="siteid" value="{{form.siteid}}">
+		<header>
+			<h1>{{{labels.general.survey}}}</h1>
+			<p>{{{labels.general.surveyinstructions}}}</p>
+		</header>
+		{{#messages.errorMessage}}
+		<div class="alert-box alert">
+			<p>{{.}}</p>
+		</div>
+		{{/messages.errorMessage}}
+		{{#messages.infoMessage}}
+		<div class="alert-box info">
+			<p>{{.}}</p>
+		</div>
+		{{/messages.infoMessage}}		
+		<div class="form-group">
+			<label for="firstName">
+				{{{labels.guestinfo.firstname}}}
+			</label>
+			<input type="text" name="firstName" value="{{form.firstName}}" id="firstName" required>
+			{{#messages.msgFirstName}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgFirstName}}			
+		</div>
+		<div class="form-group">
+			<label for="lastName">
+				{{{labels.guestinfo.lastname}}}
+			</label>
+			<input type="text" name="lastName" value="{{form.lastName}}" id="lastName" required>
+			{{#messages.msgLastName}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgLastName}}
+		</div>
+		<div class="form-group">
+			<label for="phoneNumber">
+				{{{labels.guestinfo.phonenumber}}}
+			</label>
+			<input type="text" name="phoneNumber" value="{{form.phoneNumber}}" id="phoneNumber">
+			{{#messages.msgPhone}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgPhone}}
+		</div>
+		<div class="form-group">
+			<label for="emailAddress">
+				{{{labels.guestinfo.emailaddress}}}
+			</label>
+			<input type="text" name="emailAddress" value="{{form.emailAddress}}" id="emailAddress" required>
+			{{#messages.msgEmail}}
+			<small class="error">{{.}}</small>
+			{{/messages.msgEmail}}
+		</div>
+		<div class="form-group">
+			<label for="property-select">{{{labels.feedback.question_property}}}</label>
+	        <select name="propertySelect">
+	        	{{#hotels}}
+	         	<option value="{{value}}">{{description}}</option>
+	         	{{/hotels}}
+	        </select>
+		</div>
+		{{#questions}}
+		<div class="form-group">
+			<span class="label secondary">{{{label}}}</span>
+			{{#istextarea}}
+			<textarea name="{{name}}" rows="2" cols="40"></textarea>
+			{{/istextarea}}
+			{{#isselect}}
+			<select name="{{name}}" {{#isrequired}}required{{/isrequired}}>
+				{{#options}}
+				<option value="{{value}}">{{{description}}}</option>
+				{{/options}}
+			</select>
+			{{/isselect}}
+			{{#isradio}}
+			{{#options}}
+			<label for="{{name}}">
+				<input name="{{name}}" value="{{value}}" type="radio" {{#selected}}checked{{/selected}} {{#isrequired}}required{{/isrequired}}>{{{description}}}
+			</label>
+			{{/options}}
+			{{/isradio}}
+			{{#ischeckbox}}
+			{{#options}}
+			<label for="{{name}}">
+				<input name="{{name}}" value="{{value}}" type="checkbox" {{#selected}}checked{{/selected}} {{#isrequired}}required{{/isrequired}}>{{{description}}}
+			</label>
+			{{/options}}
+			{{/ischeckbox}}
+		</div>
+		{{/questions}}
+		<div class="form-group call-to-action">
+			<button type="submit" class="button">{{{labels.general.submitbutton}}}</button>
+		</div>		
+	</form>
+</section>

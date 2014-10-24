@@ -1,0 +1,34 @@
+<section class="detailed-item-result__details">
+	{{#showByRooms}}
+	<div class="room-summary">
+		<h3>{{{labels.roomdetails.pagetitle}}}</h3>
+		{{#showRoomAlert}}
+		<p class="inventory-alert">
+			{{{labels.searchresults.numofroomsleft}}}
+		</p>
+		{{/showRoomAlert}}
+		{{#hasFeatures}}
+		<ul>
+		{{#features}}
+	  	<li class="room-summary__feature"> {{{description}}} </li>
+		{{/features}}
+		</ul>
+		{{/hasFeatures}}
+	</div>
+	{{/showByRooms}}
+	{{#showByRates}}
+	<div class="room-summary">
+		{{#hasPackages}}
+		<h4><h4>{{{labels.searchresults.includeditems}}}</h4></h4>
+		<ul>
+		{{#packages}}
+	  	<li class="room-summary__feature"> {{{description}}} </li>
+		{{/packages}}
+		</ul>
+		{{/hasPackages}}
+	</div>
+	{{/showByRates}}	
+</section>
+<section class="room-description">
+	<p>{{{description}}}</p>
+</section>
